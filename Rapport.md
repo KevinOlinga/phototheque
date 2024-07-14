@@ -66,8 +66,3 @@ Les images sont désormais correctement ajoutées à l'album sélectionné.
 Ce rapport décrit les étapes de développement, les problèmes rencontrés et les solutions apportées pour un projet de développement web. 
 Grâce à ces étapes, les utilisateurs peuvent désormais créer des albums, ajouter des images à ces albums et les visualiser en utilisant une application web fiable et fonctionnelle. 
 Les problèmes de validation de formulaire et de gestion des images ont été résolus, garantissant ainsi une expérience utilisateur optimale.
-
-Projet realiser par :
-OLINGA Kevin Cedric
-FEUGAING Joseph Junior
-TADJOUKEM Forest Carmen
