@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./layouts/_header', {cssFile: cssFile}) %>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="/albums">Albums</a></li>
+          <li><a href="/albums/new">Ajouter un nouvel album</a></li>
+          <li>
+            <a href="#">Menu déroulant</a>
+            <ul class="dropdown">
+              <li><a href="/albums">Tous les albums</a></li>
+              <li><a href="/albums/new">Ajouter un nouvel album</a></li>
+              <li><a href="#">À propos</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <h1>Vos différents albums</h1>
+      <div class="top-bar">
+        <div class="search-box">
+          <label for="search">Trouver des albums:</label>
+          <form action="/albums/" method="GET">
+            <input
+              type="text"
+              name="search"
+              placeholder="Rechercher ..."
+              value="<%= searchQuery %>"
+            />
+            <button type="submit" class="btn btn-secondary">Rechercher</button>
+          </form>
+        </div>
+      </div>
+      <% if (albums.length > 0) { %>
+      <div class="albums-list">
+        <% albums.forEach(album => { %>
+        <div class="album-card">
+          <img
+            src="<%= album.lastImg.imagePath %>"
+            alt="<%= album.lastImg.title %>"
+            class="album-thumbnail"
+          />
+          <p><%= album.title %></p>
+          <p><%= album.lastImg.title %></p>
+          <% if (album.imgs.length > 0) { %>
+            <a href="/albums/<%= album._id %>/imgs" class="btn btn-primary">Voir l'album</a>
+            <a href="/albums/<%= album._id %>/imgs/new" class="btn btn-primary">Ajouter une image</a>
+          <% } else { %>
+            <a href="/albums/<%= album._id %>/imgs/new" class="btn btn-primary">Ajouter une image</a>
+            <form
+              action="/albums/delete/<%= album._id %>"
+              method="POST"
+              style="display: inline"
+            >
+              <button
+                type="submit"
+                class="btn btn-red"
+                onclick="return confirm('Voulez-vous vraiment supprimer cet album ?');"
+              >
+                Supprimer l'album
+              </button>
+            </form>
+          <% } %>
+        </div>
+        <% }); %>
+      </div>
+      <% } else { %>
+      <p class="no-albums">Aucun album trouvé</p>
+      <% } %>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Tous droits réservés</p>
+      <ul class="social-links">
+        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </footer>
+    <link href="https://fonts.googleapis.com/css2?family=Chaparral+Pro:ital@1&display=swap" rel="stylesheet">
+    <style>
+      .navbar {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+      }
+      .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav-links li {
+        margin-right: 20px;
+      }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        padding: 10px;
+        display: none;
+      }
+      .dropdown li {
+        margin-bottom:

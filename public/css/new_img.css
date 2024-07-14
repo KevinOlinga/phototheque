@@ -1,0 +1,112 @@
+/* Global styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #337ab7;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #23527c;
+  }
+  
+  .btn-yellow {
+    background-color: #f7dc6f;
+    color: #333;
+    border: 1px solid #f7dc6f;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .btn-yellow:hover {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #fff;
+  }
+  
+  .btn-green {
+    background-color: #34c759;
+    color: #333;
+    border: 1px solid #34c759;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .btn-green:hover {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+  }
+  
+  .centered {
+    text-align: center;
+    margin: 20px 0;
+  }
